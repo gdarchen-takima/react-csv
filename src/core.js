@@ -51,7 +51,7 @@ export const elementOrEmpty = (element) => element || element === 0 ? element : 
 
 export const joiner = ((data,separator = ',') => {
   const filteredData = data.filter(e=>e);
-  return filteredData.map((row, index) => row.map((element) => "\"" + elementOrEmpty(element) + "\"").join(separator)
+  return filteredData.map((row, index) => row.map((element) => elementOrEmpty(element)).join(separator)
   ).join(`\n`);
 }
 );
